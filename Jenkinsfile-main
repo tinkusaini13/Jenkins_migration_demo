@@ -4,10 +4,10 @@ pipeline {
     environment {
         TOMCAT_HOME = '/opt/tomcat'  
         WAR_FILE = 'cloud.war'  
-        SONAR_PROJECT_KEY = 'mvn-jenkins-project'
-        SONAR_PROJECT_NAME = 'mvn-jenkins-project'
-        SONAR_URL = 'http://18.60.158.12:9000'
-        SONAR_TOKEN = 'sqp_93b2d90e6db6dab1c7f7f1829d50e771a3fc5c2b'
+        //SONAR_PROJECT_KEY = 'mvn-jenkins-project'
+        //SONAR_PROJECT_NAME = 'mvn-jenkins-project'
+       // SONAR_URL = 'http://18.60.158.12:9000'
+       // SONAR_TOKEN = 'sqp_93b2d90e6db6dab1c7f7f1829d50e771a3fc5c2b'
     }
 
     stages {
@@ -27,7 +27,7 @@ pipeline {
             }
         }
 
-        stage('Sonarqube analysis - SAST') {
+     /*  stage('Sonarqube analysis - SAST') {
             steps {
                 script {
                     withSonarQubeEnv('SonarQube') {
@@ -39,7 +39,7 @@ pipeline {
                     }
                 }
             }
-        }
+        } */
 
         stage('Deploy to Tomcat') {
             steps {
